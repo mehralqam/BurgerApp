@@ -1,0 +1,68 @@
+.App {
+  text-align: center;
+  font-size: large;
+  font-family: Open Sans,sans-serif;
+  font-weight: 400;
+}
+nav{
+  height: 56px;
+  width: 100%;
+  list-style: none;
+  position: fixed;
+  display: flex;
+  background-color: #703b09;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  z-index: 90;
+ }
+img{
+  height:55px;
+}
+.container {
+  padding: 80px;
+}
+.topBun{
+  padding-top: 100px;
+  height: 140px;
+  width: 100%;
+  background-image: url(./assets/top.jpg) ;
+  display: table;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.bottomBun{
+  height: 140px;
+  width: 100%;
+  background-image: url(./assets/bottom.jpg) ;
+  display: table;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.meat{
+  height: 56px;
+  width: 100%;
+  background-image: url(./assets/meat.jpg) ;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.cheese{
+  height: 56px;
+  width: 100%;
+  background-image: url(./assets/cheese.jpg) ;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.total{
+  padding: 10px;
+  margin: 20px;
+  background-color: #703b09;
+  color: aliceblue;
+
+}
+.new-burger
+{
+  padding: 200px;
+  background-color: black;
+}
