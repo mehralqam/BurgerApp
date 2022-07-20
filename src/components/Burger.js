@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 
 
 function Burger() {
-  const [burger, setBurger] = useState([])
+  // const [burger, setBurger] = useState([])
   const [price, setTotalPrice] = useState(0)
   const [items, setItems] = useState([
     {
@@ -33,7 +33,6 @@ function addIngredient(id) {
   const updated_items = items.map((item) => {
     if (item.id === id) {
       item_quantity = item.quantity + 1
-      setBurger([...burger, item]);
       return { ...item, quantity: item_quantity }
     }
     return item
@@ -46,16 +45,24 @@ function removeIngredient(id) {
   const updated_items = items.map((item) => {
     if (item.id === id) {
       item_quantity = item.quantity - 1
-      const nednj = burger.splice(burger.findIndex(function(i){
-        return i.id === id;
-    }), 1);
-    console.log(nednj);
-    setBurger(nednj)
       return { ...item, quantity: item_quantity }
     }
     return item
   })
   setItems(updated_items)
+}
+
+function burgerContent() {
+  let burgerIngredient = [];
+  for (let i = 0; i < items[0].quantity; i++){
+      burgerIngredient.push(<div key={burgerIngredient.length} className="meat"></div>);
+  }
+  for (let i = 0; i < items[1].quantity; i++){
+      burgerIngredient.push(<div key={burgerIngredient.length} className="cheese"></div>);
+  }
+  if(burgerIngredient.length === 0)
+      burgerIngredient.push(<p key="0">Please start adding ingredients!</p>);
+  return burgerIngredient;
 }
 return (
   <div className="App">
@@ -64,19 +71,9 @@ return (
     </div>
     <div className="topBun">
     </div>
-    <div id="ingredients">
-    <ul>
-      {burger.map((item) => (
-        <div className={item.ingredient}>
-
-        </div>
-      ))}
-    </ul>
-     </div>
+      {burgerContent()}
     <div className="bottomBun">
     </div>
-
-
     <div className="burgerChoice">
       <button onClick={() => addIngredient(0)}>Add Meat</button>
       <button onClick={() => addIngredient(1)}>Add Cheese </button>

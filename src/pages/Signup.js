@@ -1,12 +1,8 @@
 import React from 'react';
 
-function Nav(){
+function Signup(){
   return(
-  <>
-    <nav>
-    <h1>Sign up</h1>
-    </nav>
-  </>
-    );
+    <h1></h1>
+  );
 }
-export default Nav;
+export default Signup;
