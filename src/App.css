@@ -24,7 +24,7 @@ img{
   padding: 80px;
 }
 .topBun{
-  padding-top: 100px;
+  padding-top: 200px;
   height: 140px;
   width: 100%;
   background-image: url(./assets/top.jpg) ;
@@ -51,6 +51,22 @@ img{
   height: 56px;
   width: 100%;
   background-image: url(./assets/cheese.jpg) ;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.lettuce{
+  height: 56px;
+  width: 100%;
+  background-image: url(./assets/lettuse.jpg) ;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.tomato
+{
+  height: 56px;
+  width: 100%;
+  background-image: url(./assets/tomato.jpg) ;
   background-repeat: no-repeat;
   background-position: center;
 }
