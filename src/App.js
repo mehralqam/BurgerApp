@@ -5,27 +5,20 @@ import Signup from "./pages/Signup";
 import Burger from "./components/Burger";
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-export const User = createContext()
+export const UserContext = createContext(0);
 function App() {
-  var auth= false
-  const [user, setUser] = useState([
-    {
-    email: "text@test.com",
-    password: "text123*"
-    }
-  ]);
-
+  const [isLogin , setisLogin] = useState(false)
   return (
     <BrowserRouter>
         <Nav/>
-        <User.Provider value={user}>
+        <UserContext.Provider value={{setisLogin,isLogin}}>
       <Routes>
 
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/" element={<Burger/>}/>
 
       </Routes>
-      </User.Provider>
+      </UserContext.Provider>
     </BrowserRouter>
   );
 }

@@ -1,29 +1,26 @@
 import React from 'react';
-import { User } from '../App';
-import { useState} from "react";
+import { UserContext } from '../App';
+import { useContext ,useState} from "react";
 import Burger from '../components/Burger';
 const Signup = () => {
   // logic we need to implement is to set context is user logged in or not and access it in \
   //child components to render different pages
+  const email= "text@test.com";
+  const password= "text123*";
   const [user, setUser] = useState([
     {
-    email: "text@test.com",
-    password: "text123*"
+    email: "",
+    password: ""
     }
   ]);
-
-  const [isLogin , setisLogin] = useState(false)
-
-  function onSubmit(fname) {
-
-    console.log(fname)
-    console.log(user)
-    if(user.email === fname[0].email && user.password === fname[0].password){
+  const {isLogin,setisLogin} = useContext(UserContext);
+  function onSubmit() {
+    if(user.email === email && user.password === password){
       setisLogin(true)
     }
     else
     {
-      console.log("false");
+      setisLogin("false");
     }
   }
 
@@ -44,17 +41,8 @@ const Signup = () => {
         setUser({...user, password: event.target.value})
       }}
     />
-    {console.log(user)}
-    <User.Consumer>
-    {
-
-    (fname)=>{
-      return <button onClick={() => onSubmit(fname)}>Submit</button>
-    }
-    }
-    </User.Consumer></>}
-
-
+      <button onClick={onSubmit}> SUBMIT </button>
+   </>}
     </>
   )
 }
