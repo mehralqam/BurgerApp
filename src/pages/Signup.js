@@ -1,5 +1,5 @@
 import React, { useContext ,useState } from 'react';
-import { UserContext } from '../App';
+import  loginContext  from '../contexts/logins/loginContext';
 import OrderBurger from './OrderBurger';
 const Signup = () => {
   const email= "text@test.com";
@@ -10,7 +10,7 @@ const Signup = () => {
     password: ""
     }
   ]);
-  const {isLogin,setisLogin} = useContext(UserContext);
+  const {isLogin,setisLogin} = useContext(loginContext);
   const handleOnSubmit = () => {
     user.email === email && user.password === password? setisLogin(true) : setisLogin(false) ;
   }

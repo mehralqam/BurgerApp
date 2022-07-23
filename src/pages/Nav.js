@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { UserContext } from '../App';
+import  loginContext  from '../contexts/logins/loginContext';
 import  { useContext  } from 'react';
 import '../App.css';
 import logo from '../assets/logo.png';
 
 function Nav(){
-  const {isLogin,setisLogin} = useContext(UserContext);
+  console.log("helllooo im navbar");
+  const {isLogin,setisLogin} = useContext(loginContext);
   const handleLogout = () => {
     setisLogin(false);
   }

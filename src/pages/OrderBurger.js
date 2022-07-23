@@ -1,14 +1,14 @@
 import React, { useContext, useState  } from 'react';
-import { BurgerContext } from '../App';
-import { UserContext } from '../App';
-import { PriceContext } from '../App';
+import  burgerContext  from '../contexts/burgers/burgerContext'
+import  loginContext  from '../contexts/logins/loginContext';
+import  priceContext  from '../contexts/prices/priceContext';
 import Burger from "../components/Burger";
 import '../App.css';
 const OrderBurger = () => {
-  const {items,setItems} = useContext(BurgerContext);
-  const {isLogin,setisLogin} = useContext(UserContext);
-  const {price,setTotalPrice} = useContext(PriceContext);
-  const [checkout, setCheckout] = useState(false)
+  const {items,setItems} = useContext(burgerContext);
+  const {isLogin,setisLogin} = useContext(loginContext);
+  const {price,setTotalPrice} = useContext(priceContext);
+  const [checkout, setCheckout] = useState(false);
   let result= Object.values(items);
   const handleBurgerContent = () => {
     const tmpIngredientsArray = result.reduce(( prev, curr ) => {
