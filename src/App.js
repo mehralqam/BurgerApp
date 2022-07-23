@@ -9,24 +9,21 @@ import LoginState from './contexts/logins/LoginState';
 import BurgerState from './contexts/burgers/BurgerState';
 
 function App() {
-  console.log("iam app")
   return (
   <>
-  <h1>hellllooooo</h1>
+  <BrowserRouter>
   <BurgerState>
-    <h1>hellllooooo</h1>
       <LoginState>
         <PriceState>
           <Nav/>
-          <BrowserRouter>
               <Routes>
                 <Route path="/signup" element={<Signup/>}/>
                 <Route path="/" element={<Burger/>}/>
               </Routes>
-          </BrowserRouter>
           </PriceState>
     </LoginState>
   </BurgerState>
+  </BrowserRouter>
   </>
   );
 }

@@ -4,7 +4,7 @@ const LoginState = (props) => {
   const [isLogin , setisLogin] = useState(false)
   return(
     < LoginContext.Provider value={{ isLogin, setisLogin} }>
-        {props.childern}
+        {props.children}
     </LoginContext.Provider>
   )
 

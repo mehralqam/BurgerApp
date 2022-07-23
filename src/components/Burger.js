@@ -1,10 +1,17 @@
 import React from 'react';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 import { useEffect, useContext } from "react";
 import  burgerContext  from '../contexts/burgers/burgerContext'
 import  priceContext  from '../contexts/prices/priceContext';
+import  loginContext  from '../contexts/logins/loginContext';
+import MyVerticallyCenteredModal from './MyVerticallyCenteredModal';
+
 function Burger(props) {
   const {items,setItems} = useContext(burgerContext);
   const {price,setTotalPrice} = useContext(priceContext);
+  const {isLogin,setisLogin} = useContext(loginContext);
+  const [modalShow, setModalShow] = React.useState(false);
   const result = Object.values(items);
   useEffect(() => {
     let price = 0
@@ -23,25 +30,14 @@ function Burger(props) {
   }
 
   const renderMenu = () => {
-    const tempMenu = result.map((item) => (<div className="burgerChoice">
-    <button onClick={() => handleAddIngredient(item.ingredient,'add')}>Add {item.ingredient}</button>
-    <button disabled={item.quantity <= 0} onClick={() => handleAddIngredient(item.ingredient,'remove')}>Remove</button>
+    const tempMenu = result.map((item) => (<div key={item.id} className="burgerChoice">
+    <div className='container'>
+    <button className="btn-more" onClick={() => handleAddIngredient(item.ingredient,'add')}>MORE {item.ingredient}</button>
+    <button className="btn-less"  disabled={item.quantity <= 0} onClick={() => handleAddIngredient(item.ingredient,'remove')}>LESS</button>
+    </div>
   </div>))
   return tempMenu;
   }
-  // const handleBurgerContent = () => {
-  //    const tmpIngredientsArray = result.reduce(( prev, curr ) => {
-  //     const ingredientArr = new Array(curr.quantity)
-  //     .fill('')
-  //     .map(()=> <div key={curr.ingredient} className={curr.ingredient} />)
-  //     return [ ...prev, ...ingredientArr]
-  //   },[])
-  //   if (tmpIngredientsArray.length===0) {
-  //     return <p>Please start adding ingredients!</p>
-  //   }
-  //   console.log("after",tmpIngredientsArray)
-  //   return tmpIngredientsArray;
-  // }
   const renderBurgerContent = () => {
     const tempIng = []
     result.forEach(item => {
@@ -65,7 +61,16 @@ function Burger(props) {
       <div className='total'>
         <span id="total-price">Total Price: <i>{price}</i> </span>
         {renderMenu()}
-        <h1>Sign In to Checkout</h1>
+      <button disabled={!isLogin && result.length>0} onClick={() => setModalShow(true)}>
+        Checkout
+      </button>
+      </div>
+      <div>
+
+      <MyVerticallyCenteredModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
       </div>
     </div>
   );

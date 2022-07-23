@@ -6,7 +6,6 @@ import '../App.css';
 import logo from '../assets/logo.png';
 
 function Nav(){
-  console.log("helllooo im navbar");
   const {isLogin,setisLogin} = useContext(loginContext);
   const handleLogout = () => {
     setisLogin(false);

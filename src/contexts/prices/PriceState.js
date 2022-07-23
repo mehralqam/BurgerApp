@@ -4,7 +4,7 @@ const PriceState = (props) => {
   const [price, setTotalPrice] = useState(0);
   return(
     < PriceContext.Provider value={{ price, setTotalPrice} }>
-        {props.childern}
+        {props.children}
     </PriceContext.Provider>
   )
 

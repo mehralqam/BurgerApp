@@ -2,8 +2,8 @@ import React, { useContext ,useState } from 'react';
 import  loginContext  from '../contexts/logins/loginContext';
 import OrderBurger from './OrderBurger';
 const Signup = () => {
-  const email= "text@test.com";
-  const password= "text123*";
+  const email= "123";
+  const password= "123";
   const [user, setUser] = useState([
     {
     email: "",

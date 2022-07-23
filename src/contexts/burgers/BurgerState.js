@@ -29,7 +29,7 @@ const BurgerState = (props) => {
 });
   return(
     <BurgerContext.Provider value={{ items, setItems} }>
-        {props.childern}
+        {props.children}
     </BurgerContext.Provider>
   )
 

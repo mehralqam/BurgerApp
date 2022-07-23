@@ -1,4 +1,5 @@
 .App {
+  padding: 200px;
   text-align: center;
   font-size: large;
   font-family: Open Sans,sans-serif;
@@ -10,7 +11,6 @@ nav{
   list-style: none;
   position: fixed;
   display: flex;
-  background-color: #703b09;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
@@ -22,15 +22,18 @@ img{
 }
 form{
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  border: 1px solid red;
+  margin-left: 200px;
+  width: 10px;
+  padding: 20%;
+  border: 5px solid #c56b16;
+
 }
 .container {
-  padding: 80px;
+  padding: 2px;
+  display: flex;
 }
 button{
-  background-color:#703b09;
+  background-color:#c56b16;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -40,64 +43,104 @@ button{
   display: inline-block;
   font-size: 16px;
 }
+.btn-more{
+  background-color: #d39952;
+  color: white;
+  display: block;
+  padding: 5px;
+  margin: 0 50px;
+  margin-left: 550px;
+  width:80px;
+  border: 2px solid #aa6817;
+  cursor: pointer;
+  outline: none;
+}
+.btn-less{
+  background-color: #d39952;
+  color: rgb(15, 5, 5);
+  display: block;
+  padding: 5px;
+  margin: 0 5px;
+  width:80px;
+  border: 2px solid #aa6817;
+  cursor: pointer;
+  outline: none;
+}
+button:hover {
+  background-color: #b4783f;
+  color: #ffffff;
+}
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+.btn-checkout
+{
+  margin-left: 50%;
+}
 .topBun{
-  padding-top: 200px;
-  height: 140px;
-  width: 100%;
-  background-image: url(./assets/top.jpg) ;
-  display: table;
-  background-repeat: no-repeat;
-  background-position: center;
+  width: 30%;
+  margin: 2% auto;
+  box-shadow: inset -15px 0 #c15711;
+  height: 20%;
+  background:linear-gradient(#bc581e,#e27b36);
+  border-radius: 50% 50% 0 0;
+  position: relative;
+}
+.burgerContent{
+  padding-top: 100px;
 }
 .bottomBun{
-  height: 140px;
-  width: 100%;
-  background-image: url(./assets/bottom.jpg) ;
-  display: table;
-  background-repeat: no-repeat;
-  background-position: center;
+  width: 30%;
+  margin: 2% auto;
+  box-shadow: inset -15px 0 #c15711;
+  height: 20%;
+  background:linear-gradient(#bc581e,#e27b36);
+  border-radius: 0 0 30px 30px;
+  position: relative;
 }
 .meat{
-  height: 56px;
-  width: 100%;
-  background-image: url(./assets/meat.jpg) ;
-  background-repeat: no-repeat;
-  background-position: center;
+  width: 30%;
+  height: 8%;
+  background: #7a330e;
+  margin: 1% auto;
+  border-radius: 15px;
 }
 .cheese{
-  height: 56px;
-  width: 100%;
-  background-image: url(./assets/cheese.jpg) ;
-  background-repeat: no-repeat;
-  background-position: center;
+  width: 30%;
+  height: 5%;
+  background: #ddc031;
+  margin: 1% auto;
 }
 .test{
   padding: 100px;
 }
 .lettuce{
-  height: 56px;
-  width: 100%;
-  background-image: url(./assets/lettuse.jpg) ;
-  background-repeat: no-repeat;
-  background-position: center;
+  width: 30%;
+  height: 5%;
+  background:  linear-gradient(#228c1d,#91ce50);;
+  margin: 1% auto;
+  border-radius: 15px;
 }
 .tomato
 {
-  height: 56px;
-  width: 100%;
-  background-image: url(./assets/tomato.jpg) ;
-  background-repeat: no-repeat;
-  background-position: center;
+  width: 30%;
+  height: 4%;
+  background:   linear-gradient(#bf3813,#c45e38);
+  margin: 1% auto;
 }
 .total{
   padding: 10px;
   margin: 20px;
-  background-color: #af7e50;
+  background-color: #703b09;
   color: aliceblue;
   text-align: center;
 }
 .topnav {
-  background-color: #af7e50;
+  background-color: #703b09;
   overflow: hidden;
 }
 .topnav a {
@@ -109,12 +152,8 @@ button{
   font-size: 17px;
 }
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: #e2a062;
   color: black;
-}
-.container
-{
-  padding: 200px;
 }
 .burgerContent{
   overflow-y: scroll;
