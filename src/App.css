@@ -20,8 +20,25 @@ nav{
 img{
   height:55px;
 }
+form{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 1px solid red;
+}
 .container {
   padding: 80px;
+}
+button{
+  background-color:#703b09;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  margin: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 .topBun{
   padding-top: 200px;
@@ -73,12 +90,35 @@ img{
 .total{
   padding: 10px;
   margin: 20px;
-  background-color: #703b09;
+  background-color: #af7e50;
   color: aliceblue;
-
+  text-align: center;
 }
-.new-burger
+.topnav {
+  background-color: #af7e50;
+  overflow: hidden;
+}
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.container
 {
   padding: 200px;
-  background-color: black;
+}
+.burgerContent{
+  overflow-y: scroll;
+  height: 650px;
+  text-align: center;
+}
+.checkout{
+  padding: 100px;
 }
